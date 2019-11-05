@@ -1,0 +1,151 @@
+body,
+body * {
+  vertical-align: baseline;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 9pt;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: webfont;
+  src: url(fonts/peugeot_2010-webfont.woff);
+}
+
+@font-face {
+  font-family: boldWebfont;
+  src: url(fonts/peugeot_2010-bold-webfont.woff),
+    url(fonts/peugeot_2010-bold-webfont.woff2);
+}
+
+@font-face {
+  font-family: lightWebfont;
+  src: url(fonts/peugeot_2010-light-webfont.woff),
+    url(fonts/peugeot_2010-light-webfont.woff2);
+}
+
+#main-container {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color: #011b3c;
+  overflow: hidden;
+}
+
+#exit {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+#final-frame {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+#tagline-1 {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-family: webfont;
+  font-size: 1.2rem;
+  color: #fff;
+  z-index: 1;
+}
+
+#tagline-2 {
+  position: absolute;
+  left: 15px;
+  top: 35px;
+  font-family: boldWebfont;
+  font-size: 1.2rem;
+  color: #63bfd5;
+  opacity: 0;
+  z-index: 1;
+  animation: fadeIn 1s 2s forwards;
+}
+
+#players-car-container {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  background-image: url(assets/background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  animation: slideUp 1.5s forwards;
+}
+
+#cta-container {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+  padding: 5px 10px;
+  border: 1px solid #011b3c;
+  color: #011b3c;
+  font-size: 0.75rem;
+  font-family: lightWebfont;
+  opacity: 0;
+  animation: fadeIn 2s 3s forwards;
+}
+
+#logo-container {
+  width: 51px;
+  height: 36px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+#logo {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+/*Animations*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -50px;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
